@@ -1,0 +1,13 @@
+.services {
+  text-align: center;
+}
+
+.services img {
+  width: 1300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .services img {
+    width: 100%;
+  }
+}

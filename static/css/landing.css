@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  background-image: url("../images/bg.png");
+  font-family: "Inter", sans-serif;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-content {
+  margin: 0 auto;
+  width: 90%;
+}
+.rectangle {
+  margin-left: auto;
+  margin-top: 15rem;
+  padding: 3rem 5rem;
+  width: 71rem;
+  background: linear-gradient(263.48deg, #d7fff2 7.73%, #6abfa3 45.68%);
+  border-radius: 36px;
+}
+
+.ctabtn1 {
+  background-color: #dcfff3;
+  color: #1d1d1d;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  transition: background-color 0.25s ease-in;
+  font-weight: 500;
+  text-align: center;
+  width: 100px;
+}
+
+.ctabtn1:hover {
+  background-color: #62bfa0;
+}
+
+.first-s {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 37px;
+  font-weight: 500;
+}
+
+.second-s {
+  color: #1f8664;
+  font-family: "Inter", sans-serif;
+  margin-top: -1.5rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .rectangle {
+    background: linear-gradient(263.48deg, #d7fff2 7.73%, #6abfa3 45.68%);
+    border-radius: 20px;
+    width: 80%;
+    padding: 3rem 2rem;
+    position: static;
+    left: 0;
+    margin-top: 0rem;
+  }
+  body {
+    background-image: none;
+  }
+
+  .ctabtn1 {
+    background-color: #dcfff3;
+    color: #1d1d1d;
+    padding: 1rem 3rem;
+    border-radius: 6px;
+    transition: background-color 0.25s ease-in;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+
+  .ctabtn1:hover {
+    background-color: #62bfa0;
+  }
+}

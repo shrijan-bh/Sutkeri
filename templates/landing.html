@@ -1,0 +1,106 @@
+{% extends 'header.html' %} {% load static%} {% block title %} Landing
+page{%endblock title %} {% block more_head %}<link
+  rel="stylesheet"
+  href="static/css/landing.css"
+/>
+
+{% endblock more_head %} {% block body %}
+<div class="main-content">
+  <div class="rectangle">
+    <p class="first-s">Get extra care to the new one.</p>
+    <p class="second-s">
+      Helps to provide good care to the mother and upcoming child.
+    </p>
+
+    <a href="#popup2">
+      <div class="ctabtn1">Get Started</div>
+    </a>
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Login</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <form class="login_form">
+            <input
+              type="email"
+              name="user"
+              class="data"
+              placeholder="Email address"
+            /><br />
+            <input
+              type="password"
+              name="pass"
+              class="data"
+              placeholder="Password"
+            /><br />
+            <div class="input_checkbox">
+              <div class="form-group">
+                <input type="checkbox" id="html" />
+                <label for="html">Remember me</label>
+              </div>
+            </div>
+            <br />
+            <input
+              type="submit"
+              name="login"
+              class="loginbtn"
+              value="Login"
+            /><br />
+            <p>
+              Don't have an account?
+              <a href="#popup2" class="signin_here">Signin here.</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="popup2" class="overlay">
+      <div class="popup">
+        <h2>Signup</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <form class="login_form">
+            <input
+              type="text"
+              name="name"
+              class="data"
+              placeholder="Full Name"
+            /><br />
+            <input
+              type="email"
+              name="user"
+              class="data"
+              placeholder="Email address"
+            /><br />
+            <input
+              type="password"
+              name="pass"
+              class="data"
+              placeholder="Password"
+            /><br />
+            <input
+              type="number"
+              name="phone"
+              class="data"
+              placeholder="Contact Number"
+            /><br />
+
+            <br />
+            <input
+              type="submit"
+              name="login"
+              class="loginbtn"
+              value="Login"
+            /><br />
+            <p>
+              Already have an account?
+              <a href="#popup1" class="signin_here">Signup here.</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

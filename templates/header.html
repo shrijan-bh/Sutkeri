@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="static/css/header.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {% block more_head %}{% endblock more_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %} | Sutkeri</title>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="c-navbar">
+        <div class="c-navbar__zone c-navbar__zone--left">
+          <div class="logo">
+            <img src="static/images/logo.png" />
+          </div>
+        </div>
+        <div class="c-navbar__zone c-navbar__zone--middle">
+          <nav class="menu">
+            <a href="/"><span class="menu__item">Home</span></a>
+            <a href="services"><span class="menu__item">Service</span></a>
+            <a href="contact"><span class="menu__item">Contact</span></a>
+            <a href="#"><span class="menu__item">Support</span></a>
+          </nav>
+        </div>
+        <div class="c-navbar__zone c-navbar__zone--right">
+          <nav class="menu menu--social">
+            <a href="#popup2">
+              <div class="box ctabtn">Get Started</div>
+            </a>
+            <div id="popup1" class="overlay">
+              <div class="popup">
+                <h2>Login</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  <form class="login_form">
+                    <input
+                      type="email"
+                      name="user"
+                      class="data"
+                      placeholder="Email address"
+                    /><br />
+                    <input
+                      type="password"
+                      name="pass"
+                      class="data"
+                      placeholder="Password"
+                    /><br />
+                    <div class="input_checkbox">
+                      <div class="form-group">
+                        <input type="checkbox" id="html" />
+                        <label for="html">Remember me</label>
+                      </div>
+                    </div>
+                    <br />
+                    <input
+                      type="submit"
+                      name="login"
+                      class="loginbtn"
+                      value="Login"
+                    /><br />
+                    <p>
+                      Don't have an account?
+                      <a href="#popup2" class="signin_here">Signup here.</a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div id="popup2" class="overlay">
+              <div class="popup">
+                <h2>Signup</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  <form class="login_form">
+                    <input
+                      type="text"
+                      name="name"
+                      class="data"
+                      placeholder="Full Name"
+                    /><br />
+                    <input
+                      type="email"
+                      name="user"
+                      class="data"
+                      placeholder="Email address"
+                    /><br />
+                    <input
+                      type="password"
+                      name="pass"
+                      class="data"
+                      placeholder="Password"
+                    /><br />
+                    <input
+                      type="number"
+                      name="phone"
+                      class="data"
+                      placeholder="Contact Number"
+                    /><br />
+
+                    <input
+                      type="submit"
+                      name="login"
+                      class="loginbtn"
+                      value="Login"
+                    /><br />
+                    <p>
+                      Already have an account?
+                      <a href="#popup1" class="signin_here">Signin here.</a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    {% block body %}{% endblock body %}
+
+    <div class="footer"><img src="static/images/footer.png" /></div>
+  </body>
+</html>
