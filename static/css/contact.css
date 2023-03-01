@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-  position: relative;
   text-align: center;
   color: white;
   z-index: -1;
@@ -21,8 +20,9 @@ body {
 
 .top-left {
   position: absolute;
-  top: 5rem;
+  top: 18rem;
   left: 25rem;
+  z-index: 999;
 }
 
 .top-left h1 {
