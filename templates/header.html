@@ -30,21 +30,77 @@
             <a href="#popup2">
               <div class="box ctabtn">Get Started</div>
             </a>
+            <div id="popup2" class="overlay">
+              <div class="popup">
+                <h2>Signup</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  <form class="login_form" method="post" id="from1">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="form1" />
+                    <input
+                      type="text"
+                      name="username"
+                      class="data"
+                      id="username"
+                      placeholder="Full Name"
+                    /><br />
+                    <input
+                      type="email"
+                      name="email"
+                      class="data"
+                      id="email"
+                      placeholder="Email address"
+                    /><br />
+                    <input
+                      type="password"
+                      name="password"
+                      class="data"
+                      id="password"
+                      placeholder="Password"
+                    /><br />
+                    <input
+                      type="text"
+                      name="phone"
+                      class="data"
+                      id="phone"
+                      placeholder="Contact Number"
+                    /><br />
+
+                    <input
+                      type="submit"
+                      name="submit"
+                      class="loginbtn"
+                      value="signup"
+                    /><br />
+                    <p>
+                      Already have an account?
+                      <a href="#popup1" class="signin_here">Signin here.</a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
             <div id="popup1" class="overlay">
               <div class="popup">
                 <h2>Login</h2>
                 <a class="close" href="#">&times;</a>
                 <div class="content">
-                  <form class="login_form">
+                  <form class="login_form" method="post" id="form2">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="form_type" value="form2" />
+
                     <input
                       type="email"
-                      name="user"
+                      name="email"
                       class="data"
                       placeholder="Email address"
                     /><br />
                     <input
                       type="password"
-                      name="pass"
+                      name="password"
                       class="data"
                       placeholder="Password"
                     /><br />
@@ -59,57 +115,11 @@
                       type="submit"
                       name="login"
                       class="loginbtn"
-                      value="Login"
+                      value="login"
                     /><br />
                     <p>
                       Don't have an account?
-                      <a href="#popup2" class="signin_here">Signup here.</a>
-                    </p>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div id="popup2" class="overlay">
-              <div class="popup">
-                <h2>Signup</h2>
-                <a class="close" href="#">&times;</a>
-                <div class="content">
-                  <form class="login_form">
-                    <input
-                      type="text"
-                      name="name"
-                      class="data"
-                      placeholder="Full Name"
-                    /><br />
-                    <input
-                      type="email"
-                      name="user"
-                      class="data"
-                      placeholder="Email address"
-                    /><br />
-                    <input
-                      type="password"
-                      name="pass"
-                      class="data"
-                      placeholder="Password"
-                    /><br />
-                    <input
-                      type="text"
-                      name="phone"
-                      class="data"
-                      placeholder="Contact Number"
-                    /><br />
-
-                    <input
-                      type="submit"
-                      name="login"
-                      class="loginbtn"
-                      value="Login"
-                    /><br />
-                    <p>
-                      Already have an account?
-                      <a href="#popup1" class="signin_here">Signin here.</a>
+                      <a href="#popup2" class="signin_here">Signin here.</a>
                     </p>
                   </form>
                 </div>

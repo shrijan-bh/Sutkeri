@@ -7,7 +7,15 @@
     <title>Document</title>
   </head>
   <body>
-
-    
+    if request.method == 'POST':
+         if request.POST.get("form_type") == 'form2': 
+             email=request.POST.get('email') 
+             pass1=request.POST.get('password')
+             valid_user=authenticate(request, username=email,password=pass1)
+             if valid_user is not None:
+                login(request,valid_user)
+                return redirect('home page')
+             else:
+                return HttpResponse("login failed")
   </body>
 </html>
