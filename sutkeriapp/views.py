@@ -2,10 +2,13 @@
 from django.shortcuts import redirect, render,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required(login_url="/")
+def home(request):
+    return render(request,'home.html')
 
 def landing(request):
     if request.method == 'POST':
@@ -72,5 +75,9 @@ def header(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def home(request):
-    return render(request,'home.html')
+def logoutpage(request):
+    logout(request)
+    return redirect("/")
+
+def loginpage(request):
+    return redirect("/")
