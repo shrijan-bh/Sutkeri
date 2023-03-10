@@ -27,9 +27,68 @@
         </div>
         <div class="c-navbar__zone c-navbar__zone--right">
           <nav class="menu menu--social">
-            <a href="#popup2">
-              <div class="box ctabtn">Get Started</div>
+            <a href="#popup1">
+              <div class="box ctabtn">Login</div>
             </a>
+
+            <div id="popup1" class="overlay">
+              <div class="popup">
+                <h2>Login</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  {% for message in messages %}
+                  <div
+                    class="alert alert-success mb-0 alert-dismissible fade show"
+                    role="alert"
+                  >
+                    <strong>Message: </strong> {{ message }}
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  {% endfor %}
+                  <form class="login_form" method="post" id="form2">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="form_type" value="form2" />
+
+                    <input
+                      type="email"
+                      name="email"
+                      class="data"
+                      placeholder="Email address"
+                    /><br />
+                    <input
+                      type="password"
+                      name="password"
+                      class="data"
+                      placeholder="Password"
+                    /><br />
+                    <div class="input_checkbox">
+                      <div class="form-group">
+                        <input type="checkbox" id="html" />
+                        <label for="html">Remember me</label>
+                      </div>
+                    </div>
+                    <br />
+                    <input
+                      type="submit"
+                      name="login"
+                      class="loginbtn"
+                      value="login"
+                    /><br />
+                    <p>
+                      Don't have an account?
+                      <a href="#popup2" class="signin_here">Signin here.</a>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
             <div id="popup2" class="overlay">
               <div class="popup">
                 <h2>Signup</h2>
@@ -81,50 +140,6 @@
                 </div>
               </div>
             </div>
-
-            <div id="popup1" class="overlay">
-              <div class="popup">
-                <h2>Login</h2>
-                <a class="close" href="#">&times;</a>
-                <div class="content">
-                  <form class="login_form" method="post" id="form2">
-                    {% csrf_token %}
-
-                    <input type="hidden" name="form_type" value="form2" />
-
-                    <input
-                      type="email"
-                      name="email"
-                      class="data"
-                      placeholder="Email address"
-                    /><br />
-                    <input
-                      type="password"
-                      name="password"
-                      class="data"
-                      placeholder="Password"
-                    /><br />
-                    <div class="input_checkbox">
-                      <div class="form-group">
-                        <input type="checkbox" id="html" />
-                        <label for="html">Remember me</label>
-                      </div>
-                    </div>
-                    <br />
-                    <input
-                      type="submit"
-                      name="login"
-                      class="loginbtn"
-                      value="login"
-                    /><br />
-                    <p>
-                      Don't have an account?
-                      <a href="#popup2" class="signin_here">Signin here.</a>
-                    </p>
-                  </form>
-                </div>
-              </div>
-            </div>
           </nav>
         </div>
       </div>
@@ -132,8 +147,20 @@
     {% block body %}{% endblock body %}
 
     <div class="footer"><img src="static/images/footer.png" /></div>
-
-   
-    
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

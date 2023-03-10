@@ -78,7 +78,6 @@ def header(request):
             myuser = User.objects.create_user(uname, email, pass1)
             myuser.first_name = phone
             myuser.save()
-            messages.success(request,"user created")
             return redirect('/#popup1') 
 
 
@@ -95,3 +94,9 @@ def logoutpage(request):
 
 def loginpage(request):
     return redirect("/")
+
+def kyc(request):
+    return render(request, 'kyc.html')
+
+def healthdata(request):
+    return render(request, 'healthdata.html')
