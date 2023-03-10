@@ -1,0 +1,147 @@
+/* Hamburger Menu */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  overflow: hidden !important;
+}
+a {
+  text-decoration: none !important;
+  color: #1a1919;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2ecc71;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #1a1919;
+
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 3px 3px 60px rgba(0, 0, 0, 0.08);
+  width: 450px;
+  height: 102vh;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  right: -100px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 1.5rem 0;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+.userdetail .usermail,
+.userdetail .username {
+  display: inline-block;
+}
+
+.userdetail .username {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.userdetail .usermail {
+  margin-left: 1rem;
+}
+
+.menu_links {
+  margin-top: 1.5rem;
+}
+
+.logout_icon {
+  width: 20px;
+}
+
+.lgbtn {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+
+#menu li:last-child p {
+  display: inline-block;
+  margin-left: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .head_body {
+    overflow: hidden !important;
+  }
+}
+
+.logo {
+  margin-left: 5rem;
+}

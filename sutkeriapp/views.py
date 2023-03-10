@@ -5,10 +5,19 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required(login_url="/")
 def home(request):
-    return render(request,'home.html')
+    email=request.user.email
+    username=request.user.username
+    context={
+        'email':email.title(),
+        'username':username.capitalize()
+    }
+   
+    
+    return render(request,'home.html',context)
 
 def landing(request):
     if request.method == 'POST':
@@ -20,9 +29,11 @@ def landing(request):
             valid_user=authenticate(request, username=email,password=pass1)
             if valid_user is not None:
                 login(request,valid_user)
+                messages.success(request,"Login Sucessful.")
                 return redirect('home page')
             else:
-                return HttpResponse("login failed")
+                messages.error(request,"Wrong Input.")
+                return redirect('landingpage')
 
         else:
             uname=request.POST.get('email')
@@ -52,6 +63,7 @@ def header(request):
             valid_user=authenticate(request, username=email,password=pass1)
             if valid_user is not None:
                 login(request,valid_user)
+                messages.success(request,"Login Sucessful.")
                 return redirect('home page')
             else:
                 return HttpResponse("login failed")
@@ -74,6 +86,8 @@ def header(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
 
 def logoutpage(request):
     logout(request)

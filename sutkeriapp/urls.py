@@ -9,9 +9,6 @@ urlpatterns = [
      path('contact', views.contact, name='contact page'),
      path('home', views.home, name='home page'),
      path('logoutpage', views.logoutpage, name='logoutpage'),
-     path('login', views.loginpage, name='loginpage'),
-
-
-     
+     path('login', views.loginpage, name='login'),     
    
 ]

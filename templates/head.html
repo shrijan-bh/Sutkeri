@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+  <head>
+    {% block home_head %}{% endblock home_head %}
+    <link rel="stylesheet" href="static/css/head.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="head_body">
+      <nav role="navigation">
+        <div class="logo"><img src="static/images/logo.png" /></div>
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <div class="userdetail">
+              <p class="username">{{ email }}</p>
+              <p class="usermail">{{ username }}</p>
+            </div>
+            <div class="menu_links">
+              <a href="home">
+                <li>Home</li>
+              </a>
+              <a href="contact">
+                <li>Contact</li>
+              </a>
+              <a href="services">
+                <li>Services</li>
+              </a>
+              <a href="#">
+                <li>Support</li>
+              </a>
+              <a href="#">
+                <li>KYC</li>
+              </a>
+              <a href="#">
+                <li>Health Parameters</li>
+              </a>
+              <a class="lgbtn" href="{% url 'logoutpage' %}">
+                <li>
+                  <img src="static/images/logout.png" class="logout_icon" />
+                  <p>Logout</p>
+                </li>
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </body>
+
+  {% block home_body %}{% endblock home_body %}
+</html>
