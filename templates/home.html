@@ -6,8 +6,10 @@
   crossorigin="anonymous"
 />
 <link rel="stylesheet" href="static/css/home.css" />
+{% block week_head %}{% endblock week_head %}
 
-{% endblock home_head %} {% block home_body %} {% for message in messages %}
+{% endblock home_head %} {% block home_body %} {% block week_body %}{% endblock week_body %}
+{% for message in messages %}
 <div
   class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show"
   role="alert"
@@ -23,13 +25,13 @@
 {% endfor %}
 <div class="homebody" id="body-el">
   <h1>this is home page</h1>
-  {{nameu}}
+
   <div class="tables">
-    <div class="table-content">
+    <a href="{% url "weekspage" %}"><div class="table-content">
       <img src="static/images/week1.png" class="week-img" />
       <p class="week-name">Week 1</p>
       <p class="week-desc">Its a baby? or not a Baby</p>
-    </div>
+    </div></a>
     <div class="table-content">
       <img src="static/images/week2.png" class="week-img" />
       <p class="week-name">Week 2</p>
@@ -39,39 +41,39 @@
     </div>
 
     <div class="table-content green-table">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name green-name">Week 2</p>
+      <img src="static/images/week3.png" class="week-img" />
+      <p class="week-name green-name">Week 3</p>
       <p class="week-desc green-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week4.png" class="week-img" />
+      <p class="week-name">Week 4</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week5.png" class="week-img" />
+      <p class="week-name">Week 5</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week6.png" class="week-img" />
+      <p class="week-name">Week 6</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week7.png" class="week-img" />
+      <p class="week-name">Week 7</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
@@ -79,57 +81,54 @@
   </div>
   <div class="tables">
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week8.png" class="week-img" />
+      <p class="week-name">Week 8</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week9.png" class="week-img" />
+      <p class="week-name">Week 9</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content green-table">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name green-name">Week 2</p>
+      <img src="static/images/week10.png" class="week-img" />
+      <p class="week-name green-name">Week 10</p>
       <p class="week-desc green-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week11.png" class="week-img" />
+      <p class="week-name">Week 11</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week12.png" class="week-img" />
+      <p class="week-name">Week 12</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
+      <img src="static/images/week13.png" class="week-img" />
+      <p class="week-name">Week 13</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
       </p>
     </div>
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
-      <p class="week-name">Week 2</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-name"></p>
+      <p class="week-desc"></p>
     </div>
   </div>
   <div class="footer">aaa</div>

@@ -12,3 +12,10 @@ class KYC(models.Model):
     Last_period_date=models.DateField()
 
 
+
+class health_parameter(models.Model):
+    upper_bp=models.IntegerField()
+    lower_bp=models.IntegerField()
+    blood_sugar=models.FloatField()
+    body_temp=models.FloatField()
+    heart_rate=models.IntegerField()

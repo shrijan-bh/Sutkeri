@@ -100,3 +100,6 @@ def kyc(request):
 
 def healthdata(request):
     return render(request, 'healthdata.html')
+
+def weeks(request):
+    return render(request,"weeks.html")

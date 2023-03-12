@@ -12,6 +12,8 @@ urlpatterns = [
      path('login', views.loginpage, name='login'),   
      path('kyc',views.kyc,name="kyc page"),
      path('healthdata',views.healthdata,name="healthdata page"),
+     path('weeks',views.weeks,name="weekspage"),
+
 
 
    
