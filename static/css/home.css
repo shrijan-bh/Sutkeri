@@ -87,6 +87,8 @@ body {
 
 .footer {
   position: absolute;
+  font-weight: 500;
+  font-size: 20px;
   height: 90px;
   left: 0;
   bottom: 0;
@@ -97,4 +99,23 @@ body {
   text-align: center;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+}
+
+h1.trimester {
+  margin-bottom: 2rem !important ;
+  font-weight: 650;
+}
+
+.next_page {
+  display: block;
+  position: absolute;
+  top: 29.75rem;
+  right: 50px;
+}
+
+.previous_page {
+  display: block;
+  position: absolute;
+  top: 29.75rem;
+  left: 50px;
 }

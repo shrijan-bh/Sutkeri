@@ -7,9 +7,10 @@
 />
 <link rel="stylesheet" href="static/css/home.css" />
 {% block week_head %}{% endblock week_head %}
-
-{% endblock home_head %} {% block home_body %} {% block week_body %}{% endblock week_body %}
-{% for message in messages %}
+    {% endblock home_head %}
+        {% block home_body %} {% block week_body %}       
+        {% endblock week_body %}   
+        {% for message in messages %}
 <div
   class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show"
   role="alert"
@@ -24,40 +25,34 @@
 </div>
 {% endfor %}
 <div class="homebody" id="body-el">
-  <h1>this is home page</h1>
+  <h1 class="trimester">FIRST TRIMESTER</h1>
 
   <div class="tables">
-    <a href="{% url "weekspage" %}"><div class="table-content">
-      <img src="static/images/week1.png" class="week-img" />
+    <div class="table-content">
+      <img src="static/images/first/week1.png" class="week-img" />
       <p class="week-name">Week 1</p>
       <p class="week-desc">Its a baby? or not a Baby</p>
-    </div></a>
+    </div>
     <div class="table-content">
-      <img src="static/images/week2.png" class="week-img" />
+      <img src="static/images/first/week2.png" class="week-img" />
       <p class="week-name">Week 2</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc">Ovulation is happening.</p>
     </div>
 
     <div class="table-content green-table">
-      <img src="static/images/week3.png" class="week-img" />
+      <img src="static/images/first/week3.png" class="week-img" />
       <p class="week-name green-name">Week 3</p>
-      <p class="week-desc green-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc green-desc">Your baby is a tiny ball.</p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week4.png" class="week-img" />
+      <img src="static/images/first/week4.png" class="week-img" />
       <p class="week-name">Week 4</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc">Your baby is an embryo.</p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week5.png" class="week-img" />
+      <img src="static/images/first/week5.png" class="week-img" />
       <p class="week-name">Week 5</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
@@ -65,30 +60,28 @@
     </div>
 
     <div class="table-content">
-      <img src="static/images/week6.png" class="week-img" />
+      <img src="static/images/first/week6.png" class="week-img" />
       <p class="week-name">Week 6</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc">Your baby's heart has started beating.</p>
     </div>
     <div class="table-content">
-      <img src="static/images/week7.png" class="week-img" />
+      <img src="static/images/first/week7.png" class="week-img" />
       <p class="week-name">Week 7</p>
       <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
+        Your baby's eyes, nose, mouth, and ears are taking shape.
       </p>
     </div>
   </div>
   <div class="tables">
     <div class="table-content">
-      <img src="static/images/week8.png" class="week-img" />
+      <img src="static/images/vweek8.png" class="week-img" />
       <p class="week-name">Week 8</p>
       <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
+        Your baby's hands and feet are sprouting webbed fingers and toes.
       </p>
     </div>
     <div class="table-content">
-      <img src="static/images/week9.png" class="week-img" />
+      <img src="static/images/first/week9.png" class="week-img" />
       <p class="week-name">Week 9</p>
       <p class="week-desc">
         Your baby is starting to look more like a tiny human.
@@ -96,42 +89,43 @@
     </div>
 
     <div class="table-content green-table">
-      <img src="static/images/week10.png" class="week-img" />
+      <img src="static/images/first/week10.png" class="week-img" />
       <p class="week-name green-name">Week 10</p>
       <p class="week-desc green-desc">
-        Your baby is starting to look more like a tiny human.
+        Your baby has finished the most critical part of development.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week11.png" class="week-img" />
+      <img src="static/images/first/week11.png" class="week-img" />
       <p class="week-name">Week 11</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc">Your baby's busy kicking and stretching.</p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week12.png" class="week-img" />
+      <img src="static/images/first/week12.png" class="week-img" />
       <p class="week-name">Week 12</p>
       <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
+        Your baby can curl those tiny toes and make sucking movements.
       </p>
     </div>
 
     <div class="table-content">
-      <img src="static/images/week13.png" class="week-img" />
+      <img src="static/images/first/week13.png" class="week-img" />
       <p class="week-name">Week 13</p>
-      <p class="week-desc">
-        Your baby is starting to look more like a tiny human.
-      </p>
+      <p class="week-desc">You're in the last week of the first trimester.</p>
     </div>
     <div class="table-content">
       <p class="week-name"></p>
       <p class="week-desc"></p>
     </div>
   </div>
-  <div class="footer">aaa</div>
+
+  <a href="{% url "home2 page" %}"><div class="next_page">
+    <img src="static/images/next.png" class="next-img" />
+  </div></a>
+
+  <div class="footer">{{mess1}}&nbsp; &nbsp; {{mess2}}&nbsp; &nbsp; {{mess3}}&nbsp; &nbsp; {{mess4}}&nbsp; &nbsp; {{mess5}}</div>
   <script src="static/js/home.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

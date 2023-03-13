@@ -8,16 +8,73 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required(login_url="/")
-def home(request):
+def home1(request):
+    upper_bp=120
+    lower_bp=80
+    BS=5.5
+    BT=97
+    val="LOW RISK"
     email=request.user.email
     username=request.user.username
     context={
         'email':email.title(),
-        'username':username.capitalize()
+        'username':username.capitalize(),
+        'mess1':"This week:     ",
+        'mess2':"    Blood Sugar: " + str(BS)+ " mmol/l     ",
+        'mess3':"    Systolic BP: " + str(upper_bp)+ "     Diastolic BP: " + str(lower_bp),
+        'mess4':"    Body Temperature: " + str(BT)+ " °F     ",
+        'mess5':"    Aproximate Calculated Risk: " + val,
+
+
     }
    
     
-    return render(request,'home.html',context)
+    return render(request,'home1.html',context)
+
+def home2(request):
+    upper_bp=120
+    lower_bp=80
+    BS=5.5
+    BT=97
+    val="LOW RISK"
+    email=request.user.email
+    username=request.user.username
+    context={
+        'email':email.title(),
+        'username':username.capitalize(),
+        'mess1':"This week:     ",
+        'mess2':"    Blood Sugar: " + str(BS)+ " mmol/l     ",
+        'mess3':"    Systolic BP: " + str(upper_bp)+ "     Diastolic BP: " + str(lower_bp),
+        'mess4':"    Body Temperature: " + str(BT)+ " °F     ",
+        'mess5':"    Aproximate Calculated Risk: " + val,
+
+    }
+   
+    
+    return render(request,'home2.html',context)
+
+def home3(request):
+    upper_bp=120
+    lower_bp=80
+    BS=5.5
+    BT=97
+    val="LOW RISK"
+    email=request.user.email
+    username=request.user.username
+    context={
+        'email':email.title(),
+        'username':username.capitalize(),
+        'mess1':"This week:     ",
+        'mess2':"    Blood Sugar: " + str(BS)+ " mmol/l     ",
+        'mess3':"    Systolic BP: " + str(upper_bp)+ "     Diastolic BP: " + str(lower_bp),
+        'mess4':"    Body Temperature: " + str(BT)+ " °F     ",
+        'mess5':"    Aproximate Calculated Risk: " + val,
+
+    }
+   
+    
+    return render(request,'home3.html',context)
+
 
 def landing(request):
     if request.method == 'POST':
@@ -30,7 +87,7 @@ def landing(request):
             if valid_user is not None:
                 login(request,valid_user)
                 messages.success(request,"Login Sucessful.")
-                return redirect('home page')
+                return redirect('home1 page')
             else:
                 messages.error(request,"Wrong Input.")
                 return redirect('landingpage')
@@ -101,5 +158,3 @@ def kyc(request):
 def healthdata(request):
     return render(request, 'healthdata.html')
 
-def weeks(request):
-    return render(request,"weeks.html")

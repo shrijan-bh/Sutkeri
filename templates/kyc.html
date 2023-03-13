@@ -1,5 +1,61 @@
-{% extends 'head.html' %} {% load static%} {% block home_head %}
-<link rel="stylesheet" href="static/css/kyc.css" />
-{% endblock home_head %} {% block home_body %} 
-This is KYC page.
- {% endblock home_body %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static%}
+    <link rel="stylesheet" href="static/css/kyc.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYC</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="title">KYC Form</div>
+      <a href="{% url "home1 page" %}"><div class="next_page">
+    <img src="static/images/back.png" class="next-img" />
+  </div></a>
+      <form action="#">
+        <div class="user__details">
+          <div class="input__box">
+            <span class="details">First Name</span>
+            <input type="text" required />
+          </div>
+          <div class="input__box">
+            <span class="details">Middle Name</span>
+            <input type="text" />
+          </div>
+          <div class="input__box">
+            <span class="details">Last Name</span>
+            <input type="text" required />
+          </div>
+          <div class="input__box">
+            <span class="details">Date Of Birth</span>
+            <input type="text" placeholder="YYYY-MM-DD" required />
+          </div>
+          <div class="input__box">
+            <span class="details">Husband Name</span>
+            <input type="text" required />
+          </div>
+
+          <div class="input__box">
+            <span class="details">Age</span>
+            <input type="number" min="15" max="100" required />
+          </div>
+          <div class="input__box">
+            <span class="details">Last Period Date</span>
+            <input type="text" placeholder="YYYY-MM-DD" required />
+          </div>
+          <div class="input__box">
+            <span class="details">Address</span>
+            <input type="text" required />
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
