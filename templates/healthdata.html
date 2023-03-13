@@ -17,23 +17,24 @@
   <a href="{% url "home1 page" %}"><div class="next_page">
     <img src="static/images/back.png" class="next-img" />
   </div></a>
-  <form action="#">
+  <form method="post">
+    {% csrf_token %}
     <div class="user__details">
       <div class="input__box">
         <span class="details">Systolic BP </span>
-        <input type="Number" placeholder="in mmHg" required>
+        <input type="Number" name="upper_bp" step="any" placeholder="in mmHg" required>
       </div>
       <div class="input__box">
         <span class="details">Diastolic BP</span>
-        <input type="number" placeholder="in mmHg" required >
+        <input type="number" name="lower_bp" step="any" placeholder="in mmHg" required >
       </div>
       <div class="input__box">
         <span class="details">Blood Sugar</span>
-        <input type="number" placeholder="in mmol/l" required>
+        <input type="number" name="bs" step="any" placeholder="in mmol/l" required>
       </div>
       <div class="input__box">
         <span class="details">Body Temperature</span>
-        <input type="number" placeholder="in °F" required>
+        <input type="number" name="bt" step="any" placeholder="in °F" required>
       </div>
      
     </div>
