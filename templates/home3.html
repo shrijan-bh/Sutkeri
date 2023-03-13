@@ -109,7 +109,12 @@
 <a href="{% url "home2 page" %}"><div class="previous_page">
     <img src="static/images/previous.png" class="previous-img" />
   </div></a>
-  <div class="footer">{{mess1}}&nbsp; &nbsp; {{mess2}}&nbsp; &nbsp; {{mess3}}&nbsp; &nbsp; {{mess4}}&nbsp; &nbsp; {{mess5}}</div>
+  <div class="footer">{% for item in health_data %}
+    {% if forloop.last %}
+        <span>This Week:  </span>&nbsp;<span>Systolic_BP: </span>{{ item.Systolic_BP }}<span>mmHg</span> &nbsp;<span>Diastolic_BP: </span>{{ item.Diastolic_BP }}<span>mmHg</span>&nbsp; <span>Blood Sugar: </span>{{ item.Blood_Sugar }}<span>mmol/l</span> &nbsp;<span>Body Temperature: </span>{{ item.Body_Temperature }}<span>°F</span>&nbsp;<span>Calculaed Risk: </span>{{val}}
+      {% endif %}
+    {% endfor %}
+  </div>
   <script src="static/js/home.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

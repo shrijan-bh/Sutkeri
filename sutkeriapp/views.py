@@ -11,21 +11,14 @@ from sutkeriapp.models import KYC,health_parameter
 @login_required(login_url="/")
 def home1(request):
     health_data=health_parameter.objects.all()
-
-    
-    
-
     val="LOW RISK"
     email=request.user.email
-    
     username=request.user.username
     context={
         'email':email.title(),
         'username':username.capitalize(),
         'health_data':health_data,
         'val':val,
-        
-
     }
    
     
@@ -39,34 +32,23 @@ def home2(request):
     context={
         'email':email.title(),
         'username':username.capitalize(),
-        'mess1':"This week:     ",
-        'mess2':"    Blood Sugar: " + str(B_S)+ " mmol/l     ",
-        'mess3':"    Systolic BP: " + str(upper_bp)+ "     Diastolic BP: " + str(lower_bp),
-        'mess4':"    Body Temperature: " + str(B_T)+ " °F     ",
-        'mess5':"    Aproximate Calculated Risk: " + val,
-
+        'health_data':health_data,
+        'val':val,
     }
    
     
     return render(request,'home2.html',context)
 
 def home3(request):
-    upper_bp=health_parameter.objects.Systolic_BP()
-    lower_bp=health_parameter.objects.Diastolic_BP()
-    B_S=health_parameter.objects.Blood_Sugar()
-    B_T=health_parameter.objects.Body_Temperature()
+    health_data=health_parameter.objects.all()
     val="LOW RISK"
     email=request.user.email
     username=request.user.username
     context={
         'email':email.title(),
         'username':username.capitalize(),
-        'mess1':"This week:     ",
-        'mess2':"    Blood Sugar: " + str(B_S)+ " mmol/l     ",
-        'mess3':"    Systolic BP: " + str(upper_bp)+ "     Diastolic BP: " + str(lower_bp),
-        'mess4':"    Body Temperature: " + str(B_T)+ " °F     ",
-        'mess5':"    Aproximate Calculated Risk: " + val,
-
+        'health_data':health_data,
+        'val':val,
     }
    
     
