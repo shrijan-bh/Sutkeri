@@ -127,7 +127,7 @@
 
   <div class="footer">{% for item in health_data %}
     {% if forloop.last %}
-        <span>This Week:  </span>&nbsp;<span>Systolic_BP: </span>{{ item.Systolic_BP }}<span>mmHg</span> &nbsp;<span>Diastolic_BP: </span>{{ item.Diastolic_BP }}<span>mmHg</span>&nbsp; <span>Blood Sugar: </span>{{ item.Blood_Sugar }}<span>mmol/l</span> &nbsp;<span>Body Temperature: </span>{{ item.Body_Temperature }}<span>°F</span>&nbsp;<span>Calculaed Risk: </span>{{val}}
+        <span>This Week:  </span>&nbsp;<span>Systolic_BP: </span>{{ item.Systolic_BP }}<span>mmHg</span> &nbsp;<span>Diastolic_BP: </span>{{ item.Diastolic_BP }}<span>mmHg</span>&nbsp; <span>Blood Sugar: </span>{{ item.Blood_Sugar }}<span>mmol/l</span> &nbsp;<span>Body Temperature: </span>{{ item.Body_Temperature }}<span>°F</span>&nbsp;<span>Calculaed Risk: </span>{{item.Result }}
       {% endif %}
     {% endfor %}
   </div>

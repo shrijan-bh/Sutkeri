@@ -19,4 +19,5 @@ class health_parameter(models.Model):
     Diastolic_BP=models.IntegerField()
     Blood_Sugar=models.FloatField()
     Body_Temperature=models.FloatField()
+    Result=models.CharField( max_length=50,null="True",blank="True")
     

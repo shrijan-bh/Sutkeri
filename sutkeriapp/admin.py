@@ -7,6 +7,6 @@ class kycadmin(admin.ModelAdmin):
 admin.site.register(KYC,kycadmin)
 
 class healthdataadmin(admin.ModelAdmin):
-    list_display=("Systolic_BP","Diastolic_BP","Blood_Sugar","Body_Temperature")
+    list_display=("Systolic_BP","Diastolic_BP","Blood_Sugar","Body_Temperature","Result")
 
 admin.site.register(health_parameter,healthdataadmin)
