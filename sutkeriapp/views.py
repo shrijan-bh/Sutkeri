@@ -172,6 +172,10 @@ def healthdata(request):
         Diastolic_BP=request.POST.get("lower_bp")
         Blood_Sugar=request.POST.get("bs")
         Body_Temperature=request.POST.get("bt")
+        request.session['upper_bp']= Systolic_BP
+        request.session['lower_bp']= Diastolic_BP
+        request.session['bs']= Blood_Sugar
+        request.session['bt']= Body_Temperature
         Result=riskCalculator(request)
         
         
